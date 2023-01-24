@@ -148,3 +148,33 @@ predictions_df
 | BM-A_1940-0716-13 | figure (ganesa). folk deity                               | seated feet crossed holding 2 lotuses. made of bronze. | figure      | 0                         | 6           | 300189808 |    |           |
 | BM-A_1940-0716-13 | figure (ganesa). folk deity                               | seated feet crossed holding 2 lotuses. made of bronze. | feet        | 35                        | 39          | 300310200 |    |           |
 | BM-A_1940-0716-13 | figure (ganesa). folk deity                               | seated feet crossed holding 2 lotuses. made of bronze. | bronze      | 75                        | 81          | 300010957 |    |           |
+
+
+# Licence
+
+As this dataset is composed of annotations from several museum collections, its license is composed of different license terms. The "museum" column allows us to identify to which museum the data descriptions belong, and the license that governs them is listed below. 
+
+**The annotations of the following museums have a [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)**:
+
+- AIC ([The Art Institute of Chicago](https://www.artic.edu/))
+- CMA ([Columbia museum of art](Columbia Museum of Arthttps://www.columbiamuseum.org))
+- MET ([The Metropolitan Museum of Art](https://www.metmuseum.org/)
+- WCMA ([Williams College Museum of Art](https://artmuseum.williams.edu))
+
+**The annotations of the museums listed below are licensed under a [CC 3.0 license](https://creativecommons.org/licenses/by/3.0/)**:
+
+- SMITH ([Smith College Museum of Art](https://scma.smith.edu))
+
+**Annotations pertaining to the museums listed below are licensed under a [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/)**:
+- BM ([British Museum](https://www.britishmuseum.org))
+- PAHMA ([Phoebe A. Hearst Museum of Anthropology](https://hearstmuseum.berkeley.edu/))
+
+The annotations of the museums listed below are licensed under a [CC BY-NC-SA 3.0 license](https://creativecommons.org/licenses/by/3.0/):
+- PENN ([Penn Museum](https://www.penn.museum))
+
+**The annotations belonging to the museums listed below are licensed under a [CC 0.1.0 licence](https://creativecommons.org/licenses/by/1.0/)**:
+- YALE ([Peabody museum of natural history](https://peabody.yale.edu/))
+
+
+
+**The use of the ELQ-fine-tuned model is licensed under an MIT license**
