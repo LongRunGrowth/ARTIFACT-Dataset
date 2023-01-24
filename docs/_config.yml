@@ -1,9 +1,8 @@
-baseurl: /tufte-jekyll
-title: Tufte-Jekyll
-subtitle: Content-centric blogging
-author: clay harmon
-simple_search: http://google.com/search
-description: A Jekyll theme for content-rich sites
+baseurl: /CHOD
+title: CHOD Dataset
+subtitle: Cultural Heritage Obvjects EL Dataset
+author: s. cadavid-sanchez, k. Kacem, R. Martins Frade, J. Boehm, T. Chaney, D. Lashkari.
+description:  CHOD-Dataset webpage
 name: tufte
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"

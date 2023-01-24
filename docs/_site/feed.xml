@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CHOD Dataset</title>
+    <description>CHOD-Dataset webpage</description>
+    <link>http://localhost:4000/tufte-jekyll/</link>
+    <atom:link href="http://localhost:4000/tufte-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 24 Jan 2023 02:35:04 -0500</pubDate>
+    <lastBuildDate>Tue, 24 Jan 2023 02:35:04 -0500</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title></title>
+        <description>&lt;p&gt;The &lt;em&gt;CHOD&lt;/em&gt; is a dataset of Entity Linking annotations built from digital descriptions of Museum Objects. We use as our Knowledge Base the &lt;a href=&quot;https://www.getty.edu/research/tools/vocabularies/aat/about.html&quot;&gt;Getty Arts and Architecture Thesaurus&lt;/a&gt;, a controlled vocabulary describing terms associated with cultural heritage objects (predominantly materials, processes, objects, and attributes).&lt;/p&gt;
+
+&lt;h1 id=&quot;-paper&quot;&gt;&lt;img src=&quot;./assets/img/icon_doc.png&quot; width=&quot;3%&quot; /&gt; Paper&lt;/h1&gt;
+
+&lt;p&gt;We document our work in the paper: “&lt;em&gt;Evaluating end-to-end entity linking on domain-specific knowledge bases: Learning about ancient technologies from museum collections&lt;/em&gt;”. You can find the first version (Dec, 2022) of the paper in the following &lt;a href=&quot;https://drive.google.com/file/d/1s7ZAnphobSodeYXxGghEuWGyKTRGZGBj/view&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;One key challenge in applying novel NLP techniques  to social sciences is the problem of incorporating domain-specific knoweldge.  The knowledge base of choice among most entity linking techniques is Wikipedia, which covers various different domains without being specialized to a specific one. In this work, we evaluate End-to-End Entity Linking (EL) techniques on a use case relevant to social scientists, tagging all references in a text corpus to entities in a particular domain-specific knowledge base. We present a dataset of more than 2,000 descriptions and more than 10,000 entity annotations from a text corpus in digital humanities. We describe evaluation set-ups across different state-of-the-art baselines over three EL tasks: Mention detection (MD), Entity disambiguation (ED), and End-to-End Entity Linking. Additionally, we propose a fine-tuned model that outperforms all considered baselines. Our work benefits the NLP community by evaluating their techniques on an applied use case and the applied social sciences community by showing the usefulness of entity linking techniques for domain-specific text analysis.&lt;/p&gt;
+
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+
+&lt;p&gt;The figure below exemplifies an end-to-end entity linking task for our use case. Each box contains recognized entities (Mention Detection). The green text represents the Process and Techniques facet, and the blue text represents the Object facet. The light-blue boxes include the most relevant candidates for entity linking (Candidate Generation), and the golden text indicates the correct candidate (Entity Disambiguation). Each integer identifier represents the corresponding AAT ID for each candidate.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;./assets/img/example_end2end_longer.png&quot; width=&quot;80%&quot; /&gt; 
+&lt;/div&gt;
+
+&lt;h1 id=&quot;-dataset&quot;&gt;&lt;img src=&quot;./assets/img/icon_zip.png&quot; width=&quot;3%&quot; /&gt; Dataset&lt;/h1&gt;
+
+&lt;p&gt;To download manually the dataset, please use the following &lt;a href=&quot;https://drive.google.com/file/d/16-1lB_8Sbq30lAHIOVMYOBLeGGs2O5O8/view?usp=sharing&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;--code-base&quot;&gt;&lt;img src=&quot;./assets/img/icon_coding.png&quot; width=&quot;3%&quot; /&gt;  Code Base&lt;/h1&gt;
+
+&lt;p&gt;Our &lt;a href=&quot;https://github.com/C1587S/CHOD-Dataset&quot;&gt;GitHub repository&lt;/a&gt; includes the relevant code to explore the dataset and make predictions with our fine-tuned version of the &lt;a href=&quot;https://github.com/facebookresearch/BLINK/tree/main/elq&quot;&gt;ELQ model&lt;/a&gt; for this usecase.&lt;/p&gt;
+
+&lt;h2 id=&quot;-prediction-example&quot;&gt;&lt;img src=&quot;./assets/img/icon_nns.png&quot; width=&quot;3%&quot; /&gt; Prediction example&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Basic Example&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Details of this prediction example below are provided in the following &lt;a href=&quot;https://github.com/C1587S/CHOD-Dataset/blob/master/tutorial_preds.ipynb&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Prediction&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The ELQ model can make predictions of text descriptions of the following type:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;“Figure (woman) wearing Rainbow Dance costume. Made of red, black, blue, gold painted earthenware.”&lt;/li&gt;
+  &lt;li&gt;“Figure (Gaṇesa). Folk deity,seated feet crossed holding 2 lotuses. Made of bronze.”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Output format&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;One example of the ELQ- output is as follows:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;text&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;chunk_text&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;chunk_start&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;chunk_end&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;aat&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.&lt;/td&gt;
+      &lt;td&gt;figure&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;300404114&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.&lt;/td&gt;
+      &lt;td&gt;costume&lt;/td&gt;
+      &lt;td&gt;37&lt;/td&gt;
+      &lt;td&gt;44&lt;/td&gt;
+      &lt;td&gt;300178802&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.&lt;/td&gt;
+      &lt;td&gt;painted&lt;/td&gt;
+      &lt;td&gt;77&lt;/td&gt;
+      &lt;td&gt;84&lt;/td&gt;
+      &lt;td&gt;300161986&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.&lt;/td&gt;
+      &lt;td&gt;earthenware&lt;/td&gt;
+      &lt;td&gt;85&lt;/td&gt;
+      &lt;td&gt;96&lt;/td&gt;
+      &lt;td&gt;300140803&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.&lt;/td&gt;
+      &lt;td&gt;figure&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;300189808&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.&lt;/td&gt;
+      &lt;td&gt;feet&lt;/td&gt;
+      &lt;td&gt;35&lt;/td&gt;
+      &lt;td&gt;39&lt;/td&gt;
+      &lt;td&gt;300310200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.&lt;/td&gt;
+      &lt;td&gt;bronze&lt;/td&gt;
+      &lt;td&gt;75&lt;/td&gt;
+      &lt;td&gt;81&lt;/td&gt;
+      &lt;td&gt;300010957&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The “aat” column corresponds to the identity identifier in the &lt;a href=&quot;https://www.getty.edu/research/tools/vocabularies/aat/?find=300140803&amp;amp;logic=AND&amp;amp;note=&amp;amp;english=N&amp;amp;prev_page=1&quot;&gt;Getty Arts and Architecture Thesaurus catalog&lt;/a&gt;. For example, the “300140803” AAT corresponds to the term “earthenware,” whose description is: “Pottery with a porous body, fired below 1200 degrees Centigrade. It is not vitrified, and must be glazed to render it nonporous.”&lt;/p&gt;
+
+&lt;h1 id=&quot;--licence&quot;&gt;&lt;img src=&quot;./assets/img/icon_copyright.png&quot; width=&quot;3%&quot; /&gt;  Licence&lt;/h1&gt;
+
+&lt;p&gt;As this dataset is composed of annotations from several museum collections, its license is composed of different license terms. The “museum” column allows us to identify to which museum the data descriptions belong, and the license that governs them is listed below.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The annotations of the following museums have a &lt;a href=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;&gt;CC0 license&lt;/a&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;AIC (&lt;a href=&quot;https://www.artic.edu/&quot;&gt;The Art Institute of Chicago&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;CMA (&lt;a href=&quot;Columbia Museum of Arthttps://www.columbiamuseum.org&quot;&gt;Columbia museum of art&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;MET (&lt;a href=&quot;https://www.metmuseum.org/&quot;&gt;The Metropolitan Museum of Art&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;WCMA (&lt;a href=&quot;https://artmuseum.williams.edu&quot;&gt;Williams College Museum of Art&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The annotations of the museums listed below are licensed under a &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC 3.0 license&lt;/a&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SMITH (&lt;a href=&quot;https://scma.smith.edu&quot;&gt;Smith College Museum of Art&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Annotations pertaining to the museums listed below are licensed under a &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/4.0/&quot;&gt;CC BY-NC-SA 4.0 license&lt;/a&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;BM (&lt;a href=&quot;https://www.britishmuseum.org&quot;&gt;British Museum&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;PAHMA (&lt;a href=&quot;https://hearstmuseum.berkeley.edu/&quot;&gt;Phoebe A. Hearst Museum of Anthropology&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The annotations of the museums listed below are licensed under a &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC BY-NC-SA 3.0 license&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;PENN (&lt;a href=&quot;https://www.penn.museum&quot;&gt;Penn Museum&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The annotations belonging to the museums listed below are licensed under a &lt;a href=&quot;https://creativecommons.org/licenses/by/1.0/&quot;&gt;CC 0.1.0 licence&lt;/a&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;YALE (&lt;a href=&quot;https://peabody.yale.edu/&quot;&gt;Peabody museum of natural history&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The use of the ELQ-fine-tuned model is licensed under an MIT license&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 23 Jan 2023 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/tufte-jekyll/articles/23/main</link>
+        <guid isPermaLink="true">http://localhost:4000/tufte-jekyll/articles/23/main</guid>
+        
+        
+        <category>page</category>
+        
+      </item>
+    
+  </channel>
+</rss>

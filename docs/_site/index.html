@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>blog</title>
+  <meta name="description" content="CHOD-Dataset webpage">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+<!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: [
+      "MathMenu.js",
+      "MathZoom.js",
+      "AssistiveMML.js",
+      "a11y/accessibility-menu.js"
+    ],
+    jax: ["input/TeX", "output/CommonHTML"],
+    TeX: {
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    }
+  });
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+
+
+  <link rel="stylesheet" type="text/css" href="/tufte-jekyll/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/tufte-jekyll/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="http://localhost:4000/tufte-jekyll/">
+
+  <link rel="alternate" type="application/rss+xml" title="CHOD Dataset" href="http://localhost:4000/tufte-jekyll/feed.xml" />
+</head>
+
+  <body class="full-width">
+    <!--- Header and nav template site-wide -->
+<header>
+</header>
+    <article>
+      <div style="text-align: center;">
+  <h1 class="content-listing-header sans">Cultural Heritage Objects Entity Linking Dataset</h1>
+  <img src="./assets/img/minor_logo.png" width="40%"> 
+</div>
+
+  <ul class="content-listing ">
+          
+        <li class="listing">
+          <hr class="slender">
+          <a href="/tufte-jekyll/articles/23/main"><h3 class="contrast"></h3></a>
+          <br><span class="smaller">January 23, 2023</span>  <br/>
+          <div><p>The <em>CHOD</em> is a dataset of Entity Linking annotations built from digital descriptions of Museum Objects. We use as our Knowledge Base the <a href="https://www.getty.edu/research/tools/vocabularies/aat/about.html">Getty Arts and Architecture Thesaurus</a>, a controlled vocabulary describing terms associated with cultural heritage objects (predominantly materials, processes, objects, and attributes).</p>
+
+<h1 id="-paper"><img src="./assets/img/icon_doc.png" width="3%" /> Paper</h1>
+
+<p>We document our work in the paper: “<em>Evaluating end-to-end entity linking on domain-specific knowledge bases: Learning about ancient technologies from museum collections</em>”. You can find the first version (Dec, 2022) of the paper in the following <a href="https://drive.google.com/file/d/1s7ZAnphobSodeYXxGghEuWGyKTRGZGBj/view">link</a>.</p>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>One key challenge in applying novel NLP techniques  to social sciences is the problem of incorporating domain-specific knoweldge.  The knowledge base of choice among most entity linking techniques is Wikipedia, which covers various different domains without being specialized to a specific one. In this work, we evaluate End-to-End Entity Linking (EL) techniques on a use case relevant to social scientists, tagging all references in a text corpus to entities in a particular domain-specific knowledge base. We present a dataset of more than 2,000 descriptions and more than 10,000 entity annotations from a text corpus in digital humanities. We describe evaluation set-ups across different state-of-the-art baselines over three EL tasks: Mention detection (MD), Entity disambiguation (ED), and End-to-End Entity Linking. Additionally, we propose a fine-tuned model that outperforms all considered baselines. Our work benefits the NLP community by evaluating their techniques on an applied use case and the applied social sciences community by showing the usefulness of entity linking techniques for domain-specific text analysis.</p>
+
+<h2 id="example">Example</h2>
+
+<p>The figure below exemplifies an end-to-end entity linking task for our use case. Each box contains recognized entities (Mention Detection). The green text represents the Process and Techniques facet, and the blue text represents the Object facet. The light-blue boxes include the most relevant candidates for entity linking (Candidate Generation), and the golden text indicates the correct candidate (Entity Disambiguation). Each integer identifier represents the corresponding AAT ID for each candidate.</p>
+
+<div style="text-align: center;">
+    <img src="./assets/img/example_end2end_longer.png" width="80%" /> 
+</div>
+
+<h1 id="-dataset"><img src="./assets/img/icon_zip.png" width="3%" /> Dataset</h1>
+
+<p>To download manually the dataset, please use the following <a href="https://drive.google.com/file/d/16-1lB_8Sbq30lAHIOVMYOBLeGGs2O5O8/view?usp=sharing">link</a>.</p>
+
+<h1 id="--code-base"><img src="./assets/img/icon_coding.png" width="3%" />  Code Base</h1>
+
+<p>Our <a href="https://github.com/C1587S/CHOD-Dataset">GitHub repository</a> includes the relevant code to explore the dataset and make predictions with our fine-tuned version of the <a href="https://github.com/facebookresearch/BLINK/tree/main/elq">ELQ model</a> for this usecase.</p>
+
+<h2 id="-prediction-example"><img src="./assets/img/icon_nns.png" width="3%" /> Prediction example</h2>
+
+<p><strong>Basic Example</strong></p>
+
+<p>Details of this prediction example below are provided in the following <a href="https://github.com/C1587S/CHOD-Dataset/blob/master/tutorial_preds.ipynb">link</a></p>
+
+<p><strong>Prediction</strong></p>
+
+<p>The ELQ model can make predictions of text descriptions of the following type:</p>
+
+<ol>
+  <li>“Figure (woman) wearing Rainbow Dance costume. Made of red, black, blue, gold painted earthenware.”</li>
+  <li>“Figure (Gaṇesa). Folk deity,seated feet crossed holding 2 lotuses. Made of bronze.”</li>
+</ol>
+
+<p><strong>Output format</strong></p>
+
+<p>One example of the ELQ- output is as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>text</strong></th>
+      <th><strong>chunk_text</strong></th>
+      <th><strong>chunk_start</strong></th>
+      <th><strong>chunk_end</strong></th>
+      <th><strong>aat</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.</td>
+      <td>figure</td>
+      <td>0</td>
+      <td>6</td>
+      <td>300404114</td>
+    </tr>
+    <tr>
+      <td>figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.</td>
+      <td>costume</td>
+      <td>37</td>
+      <td>44</td>
+      <td>300178802</td>
+    </tr>
+    <tr>
+      <td>figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.</td>
+      <td>painted</td>
+      <td>77</td>
+      <td>84</td>
+      <td>300161986</td>
+    </tr>
+    <tr>
+      <td>figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.</td>
+      <td>earthenware</td>
+      <td>85</td>
+      <td>96</td>
+      <td>300140803</td>
+    </tr>
+    <tr>
+      <td>figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.</td>
+      <td>figure</td>
+      <td>0</td>
+      <td>6</td>
+      <td>300189808</td>
+    </tr>
+    <tr>
+      <td>figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.</td>
+      <td>feet</td>
+      <td>35</td>
+      <td>39</td>
+      <td>300310200</td>
+    </tr>
+    <tr>
+      <td>figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.</td>
+      <td>bronze</td>
+      <td>75</td>
+      <td>81</td>
+      <td>300010957</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The “aat” column corresponds to the identity identifier in the <a href="https://www.getty.edu/research/tools/vocabularies/aat/?find=300140803&amp;logic=AND&amp;note=&amp;english=N&amp;prev_page=1">Getty Arts and Architecture Thesaurus catalog</a>. For example, the “300140803” AAT corresponds to the term “earthenware,” whose description is: “Pottery with a porous body, fired below 1200 degrees Centigrade. It is not vitrified, and must be glazed to render it nonporous.”</p>
+
+<h1 id="--licence"><img src="./assets/img/icon_copyright.png" width="3%" />  Licence</h1>
+
+<p>As this dataset is composed of annotations from several museum collections, its license is composed of different license terms. The “museum” column allows us to identify to which museum the data descriptions belong, and the license that governs them is listed below.</p>
+
+<p><strong>The annotations of the following museums have a <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 license</a></strong>:</p>
+
+<ul>
+  <li>AIC (<a href="https://www.artic.edu/">The Art Institute of Chicago</a>)</li>
+  <li>CMA (<a href="Columbia Museum of Arthttps://www.columbiamuseum.org">Columbia museum of art</a>)</li>
+  <li>MET (<a href="https://www.metmuseum.org/">The Metropolitan Museum of Art</a></li>
+  <li>WCMA (<a href="https://artmuseum.williams.edu">Williams College Museum of Art</a>)</li>
+</ul>
+
+<p><strong>The annotations of the museums listed below are licensed under a <a href="https://creativecommons.org/licenses/by/3.0/">CC 3.0 license</a></strong>:</p>
+
+<ul>
+  <li>SMITH (<a href="https://scma.smith.edu">Smith College Museum of Art</a>)</li>
+</ul>
+
+<p><strong>Annotations pertaining to the museums listed below are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a></strong>:</p>
+<ul>
+  <li>BM (<a href="https://www.britishmuseum.org">British Museum</a>)</li>
+  <li>PAHMA (<a href="https://hearstmuseum.berkeley.edu/">Phoebe A. Hearst Museum of Anthropology</a>)</li>
+</ul>
+
+<p>The annotations of the museums listed below are licensed under a <a href="https://creativecommons.org/licenses/by/3.0/">CC BY-NC-SA 3.0 license</a>:</p>
+<ul>
+  <li>PENN (<a href="https://www.penn.museum">Penn Museum</a>)</li>
+</ul>
+
+<p><strong>The annotations belonging to the museums listed below are licensed under a <a href="https://creativecommons.org/licenses/by/1.0/">CC 0.1.0 licence</a></strong>:</p>
+<ul>
+  <li>YALE (<a href="https://peabody.yale.edu/">Peabody museum of natural history</a>)</li>
+</ul>
+
+<p><strong>The use of the ELQ-fine-tuned model is licensed under an MIT license</strong></p>
+
+</div> 
+        </li>
+    
+  </ul>
+    </article>
+    <span class="print-footer">blog - s. cadavid-sanchez, k. Kacem, R. Martins Frade, J. Boehm, T. Chaney, D. Lashkari.</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail3"></span></a></li>    
+    
+      <li>
+        <a href="//https://github.com/C1587S/CHOD-Dataset"><span class="icon-github"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2023 &nbsp;&nbsp;S. CADAVID-SANCHEZ, K. KACEM, R. MARTINS FRADE, J. BOEHM, T. CHANEY, D. LASHKARI.</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>
