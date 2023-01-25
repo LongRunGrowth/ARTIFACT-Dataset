@@ -139,16 +139,15 @@ predictions_df
 
 **Output Example:**
 
-| id                | text                                                      | chunk_text                                             | chunk_start | chunk_end                 | aat         |           |    |           |
-|-------------------|-----------------------------------------------------------|--------------------------------------------------------|-------------|---------------------------|-------------|-----------|----|-----------|
-| BM-A_1936-1012-44 | figure (woman) wearing rainbow dance costume. made of red | black                                                  | blue        | gold painted earthenware. | figure      | 0         | 6  | 300404114 |
-| BM-A_1936-1012-44 | figure (woman) wearing rainbow dance costume. made of red | black                                                  | blue        | gold painted earthenware. | costume     | 37        | 44 | 300178802 |
-| BM-A_1936-1012-44 | figure (woman) wearing rainbow dance costume. made of red | black                                                  | blue        | gold painted earthenware. | painted     | 77        | 84 | 300161986 |
-| BM-A_1936-1012-44 | figure (woman) wearing rainbow dance costume. made of red | black                                                  | blue        | gold painted earthenware. | earthenware | 85        | 96 | 300140803 |
-| BM-A_1940-0716-13 | figure (ganesa). folk deity                               | seated feet crossed holding 2 lotuses. made of bronze. | figure      | 0                         | 6           | 300189808 |    |           |
-| BM-A_1940-0716-13 | figure (ganesa). folk deity                               | seated feet crossed holding 2 lotuses. made of bronze. | feet        | 35                        | 39          | 300310200 |    |           |
-| BM-A_1940-0716-13 | figure (ganesa). folk deity                               | seated feet crossed holding 2 lotuses. made of bronze. | bronze      | 75                        | 81          | 300010957 |    |           |
-
+|id               |text                                                                                             |chunk_text |chunk_start|chunk_end|aat      |
+|-----------------|-------------------------------------------------------------------------------------------------|-----------|-----------|---------|---------|
+|BM-A_1936-1012-44|figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.|figure     |0          |6        |300404114|
+|BM-A_1936-1012-44|figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.|costume    |37         |44       |300178802|
+|BM-A_1936-1012-44|figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.|painted    |77         |84       |300161986|
+|BM-A_1936-1012-44|figure (woman) wearing rainbow dance costume. made of red, black, blue, gold painted earthenware.|earthenware|85         |96       |300140803|
+|BM-A_1940-0716-13|figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.               |figure     |0          |6        |300189808|
+|BM-A_1940-0716-13|figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.               |feet       |35         |39       |300310200|
+|BM-A_1940-0716-13|figure (ganesa). folk deity,seated feet crossed holding 2 lotuses. made of bronze.               |bronze     |75         |81       |300010957|
 
 # Licence
 
@@ -157,13 +156,10 @@ As this dataset is composed of annotations from several museum collections, its 
 **The annotations of the following museums have a [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)**:
 
 - AIC ([The Art Institute of Chicago](https://www.artic.edu/))
-- CMA ([Columbia museum of art](Columbia Museum of Arthttps://www.columbiamuseum.org))
+- CMA ([Cleveland Museum of Art](https://www.clevelandart.org))
 - MET ([The Metropolitan Museum of Art](https://www.metmuseum.org/)
 - WCMA ([Williams College Museum of Art](https://artmuseum.williams.edu))
-
-**The annotations of the museums listed below are licensed under a [CC 3.0 license](https://creativecommons.org/licenses/by/3.0/)**:
-
-- SMITH ([Smith College Museum of Art](https://scma.smith.edu))
+- SMITH ([Smithsonian National Museum](https://www.si.edu/visit)))
 
 **Annotations pertaining to the museums listed below are licensed under a [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/)**:
 - BM ([British Museum](https://www.britishmuseum.org))
@@ -174,7 +170,6 @@ The annotations of the museums listed below are licensed under a [CC BY-NC-SA 3.
 
 **The annotations belonging to the museums listed below are licensed under a [CC 0.1.0 licence](https://creativecommons.org/licenses/by/1.0/)**:
 - YALE ([Peabody museum of natural history](https://peabody.yale.edu/))
-
 
 
 **The use of the ELQ-fine-tuned model is licensed under an MIT license**
