@@ -1,4 +1,7 @@
-# CHOD-Dataset
+# ARTIFACT-Dataset
+
+ARTIFACT: Automated Resource for Technology and Information Finding in Artifact Collections
+
 An End-to-End Entity Linking Dataset of Cultural Heritage Objects
 
 
